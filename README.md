@@ -87,7 +87,7 @@ I have developed the Program in the following way:
 
 ##### 1) Testing Queries in the respective database systems:
 
-This is a manual test. I run the query directly with SQL to test the result I get. 
+This is a manual test. I run the query directly with SQL an Cypher to test the result I get. 
 
 Example PostGresSQL:
 
