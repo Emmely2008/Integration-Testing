@@ -16,13 +16,13 @@ public class DataAccessPostGreSQL implements DataAccessor {
         this.name = "PostGreSQL";
         this.dbConnectorPostGres = dbConnectorPostGres;
     }
-    public List<Person> getAllPersonsDepthOne() {
+    public List<Person> getAllPersonsDepthOne(String person) {
         List<Person> list = new ArrayList();
 
         try{
             Connection connection = this.dbConnectorPostGres.getConnection();
             Statement stmt = connection.createStatement();
-            String query = "SELECT * FROM chinook.person a JOIN  (select * FROM chinook.endorsement e JOIN chinook.person p ON e.source_node_id = p.id WHERE p.name='Sol Linkert') b ON a.id=b.target_node_id;";
+            String query = "SELECT * FROM chinook.person a JOIN  (select * FROM chinook.endorsement e JOIN chinook.person p ON e.source_node_id = p.id WHERE p.name='"+person+"') b ON a.id=b.target_node_id;";
             ResultSet res = stmt.executeQuery(query);
             while(res.next()){
                 Person p = new Person();
@@ -38,19 +38,19 @@ public class DataAccessPostGreSQL implements DataAccessor {
         return list;
     }
 
-    public List<Person> getAllPersonsDepthTwo() {
+    public List<Person> getAllPersonsDepthTwo(String person) {
         return null;
     }
 
-    public List<Person> getAllPersonsDepthThree() {
+    public List<Person> getAllPersonsDepthThree(String person) {
         return null;
     }
 
-    public List<Person> getAllPersonsDepthFour() {
+    public List<Person> getAllPersonsDepthFour(String person) {
         return null;
     }
 
-    public List<Person> getAllPersonsDepthFive() {
+    public List<Person> getAllPersonsDepthFive(String person) {
         return null;
     }
 

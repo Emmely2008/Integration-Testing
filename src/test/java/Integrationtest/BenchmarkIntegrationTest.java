@@ -35,8 +35,9 @@ public class BenchmarkIntegrationTest {
 
         Benchmark bm = new Benchmark(new DataAccessNeo4J(new DBConnectorNeo4J()), time);
         String[] methodsToTest = {"getAllPersonsDepthOne"};
-        int runs = 10;
-        HashMap resultsNeo4J = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsNeo4J = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsNeo4J.get(methodsToTest[i]);
@@ -55,8 +56,9 @@ public class BenchmarkIntegrationTest {
 
         Benchmark bm = new Benchmark(new DataAccessPostGreSQL(new DBConnectorPostGres()), time);
         String[] methodsToTest = {"getAllPersonsDepthOne"};
-        int runs = 10;
-        HashMap resultsPotGres = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsPotGres = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsPotGres.get(methodsToTest[i]);

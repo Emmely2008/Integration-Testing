@@ -16,23 +16,23 @@ public class Benchmark {
         this.timer = timer;
     }
 
-    private double doBenchmark(String function){
+    private double doBenchmark(String function, String nodeAsName){
 
         this.timer.resetTime();
         if( function.equals("getAllPersonsDepthOne")){
-            dt.getAllPersonsDepthOne();
+            dt.getAllPersonsDepthOne(nodeAsName);
         }
         if( function.equals("getAllPersonsDepthTwo")){
-            dt.getAllPersonsDepthTwo();
+            dt.getAllPersonsDepthTwo(nodeAsName);
         }
         if( function.equals("getAllPersonsDepthThree")){
-            dt.getAllPersonsDepthThree();
+            dt.getAllPersonsDepthThree(nodeAsName);
         }
         if( function.equals("getAllPersonsDepthFour")){
-            dt.getAllPersonsDepthFour();
+            dt.getAllPersonsDepthFour(nodeAsName);
         }
         if( function.equals("getAllPersonsDepthFive")){
-            dt.getAllPersonsDepthFive();
+            dt.getAllPersonsDepthFive(nodeAsName);
         }
 
         double time = timer.elapsedTime();
@@ -41,14 +41,14 @@ public class Benchmark {
 
     }
 
-    public HashMap getBenchmarkResults(int runs, String[] methods){
+    public HashMap getBenchmarkResults(String[] twentyRandomNodes, String[] methods){
 
         HashMap measurement = new HashMap();
         for (int i = 0; i < methods.length; i++) {
             MeasurementData measurementData = new MeasurementData();
             measurementData.setType(this.dt.getName());
-            for (int j = 0; j < runs; j++) {
-                measurementData.addData(this.doBenchmark(methods[i]));
+            for (int j = 0; j < twentyRandomNodes.length; j++) {
+                measurementData.addData(this.doBenchmark(methods[i], twentyRandomNodes[j]));
             }
             measurement.put(methods[i], measurementData);
         }

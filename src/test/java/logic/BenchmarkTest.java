@@ -20,13 +20,14 @@ class BenchmarkTest {
         Benchmark bm = new Benchmark(new DataAccessStub(), timeMock);
         when(timeMock.elapsedTime()).thenReturn(2.0);
         String[] methodsToTest = {"getAllPersonsDepthOne","getAllPersonsDepthTwo","getAllPersonsDepthFour","getAllPersonsDepthFive"};
-        int runs = 10;
-        HashMap resultsStub = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsStub = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsStub.get(methodsToTest[i]);
             msd.getData();
-            assertThat(msd.getData().size(), equalTo(runs));
+            assertThat(msd.getData().size(), equalTo(twentyRandomNodes.length));
 
         }
         HashMap[] hm = {resultsStub};
@@ -40,8 +41,9 @@ class BenchmarkTest {
         Benchmark bm = new Benchmark(new DataAccessStub(), timeMock);
         when(timeMock.elapsedTime()).thenReturn(2.0);
         String[] methodsToTest = {"getAllPersonsDepthOne","getAllPersonsDepthTwo","getAllPersonsDepthFour","getAllPersonsDepthFive"};
-        int runs = 10;
-        HashMap resultsStub = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsStub = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsStub.get(methodsToTest[i]);
@@ -60,8 +62,9 @@ class BenchmarkTest {
         Benchmark bm = new Benchmark(new DataAccessStub(), timeMock);
         when(timeMock.elapsedTime()).thenReturn(2.0);
         String[] methodsToTest = {"getAllPersonsDepthOne","getAllPersonsDepthTwo","getAllPersonsDepthFour","getAllPersonsDepthFive"};
-        int runs = 10;
-        HashMap resultsStub = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsStub = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsStub.get(methodsToTest[i]);

@@ -13,7 +13,7 @@ class DataAccessPostGreSQLTest {
     @Test
     void getAllPersonsDepthOne() throws Exception{
         DataAccessPostGreSQL da = new DataAccessPostGreSQL(new DBConnectorPostGres());
-        List<Person> list = da.getAllPersonsDepthOne();
+        List<Person> list = da.getAllPersonsDepthOne("Sol Linkert");
         assertThat(list.size(), equalTo(8));
 
     }

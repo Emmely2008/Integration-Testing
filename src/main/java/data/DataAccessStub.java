@@ -10,24 +10,24 @@ public class DataAccessStub implements DataAccessor  {
     public DataAccessStub(){
         this.name = "Stub";
     }
-    public List<Person> getAllPersonsDepthOne() {
+    public List<Person> getAllPersonsDepthOne(String nodeAsName) {
 
         return simulate();
     }
 
-    public List<Person> getAllPersonsDepthTwo() {
+    public List<Person> getAllPersonsDepthTwo(String nodeAsName) {
         return simulate();
     }
 
-    public List<Person> getAllPersonsDepthThree() {
+    public List<Person> getAllPersonsDepthThree(String nodeAsName) {
         return simulate();
     }
 
-    public List<Person> getAllPersonsDepthFour() {
+    public List<Person> getAllPersonsDepthFour(String nodeAsName) {
         return simulate();
     }
 
-    public List<Person> getAllPersonsDepthFive() {
+    public List<Person> getAllPersonsDepthFive(String nodeAsName) {
         return simulate();
     }
 

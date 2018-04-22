@@ -18,7 +18,7 @@ public class DataAccessNeo4J implements DataAccessor {
         this.name = "Neo4J";
     }
 
-    public List<Person> getAllPersonsDepthOne() {
+    public List<Person> getAllPersonsDepthOne(String person) {
         List<Person> list = new ArrayList();
 
         try {
@@ -38,7 +38,7 @@ public class DataAccessNeo4J implements DataAccessor {
         return list;
     }
 
-    public List<Person> getAllPersonsDepthTwo() {
+    public List<Person> getAllPersonsDepthTwo(String person) {
         List<Person> list = new ArrayList();
 
         try {
@@ -60,15 +60,15 @@ public class DataAccessNeo4J implements DataAccessor {
     }
 
 
-    public List<Person> getAllPersonsDepthThree() {
+    public List<Person> getAllPersonsDepthThree(String person) {
         return null;
     }
 
-    public List<Person> getAllPersonsDepthFour() {
+    public List<Person> getAllPersonsDepthFour(String person) {
         return null;
     }
 
-    public List<Person> getAllPersonsDepthFive() {
+    public List<Person> getAllPersonsDepthFive(String person) {
         return null;
     }
 

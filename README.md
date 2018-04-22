@@ -118,7 +118,7 @@ class DataAccessNeo4JTest {
     @Test
     void getAllPersonsDepthOne() {
         DataAccessNeo4J da = new DataAccessNeo4J(new DBConnectorNeo4J());
-        List<Person> list = da.getAllPersonsDepthOne();
+        List<Person> list = da.getAllPersonsDepthOne("Sol Linkert");
         assertThat(list.size(), equalTo(8));
     }
 	
@@ -127,14 +127,14 @@ class DataAccessNeo4JTest {
  
 
 ```
-class DataAccessNeo4JTest {
-
+class DataAccessPostGreSQLTest {
 
     @Test
-    void getAllPersonsDepthOne() {
-        DataAccessNeo4J da = new DataAccessNeo4J(new DBConnectorNeo4J());
-        List<Person> list = da.getAllPersonsDepthOne();
+    void getAllPersonsDepthOne() throws Exception{
+        DataAccessPostGreSQL da = new DataAccessPostGreSQL(new DBConnectorPostGres());
+        List<Person> list = da.getAllPersonsDepthOne("Sol Linkert");
         assertThat(list.size(), equalTo(8));
+
     }
 	
 ```
@@ -236,13 +236,14 @@ class BenchmarkTest {
         Benchmark bm = new Benchmark(new DataAccessStub(), timeMock);
         when(timeMock.elapsedTime()).thenReturn(2.0);
         String[] methodsToTest = {"getAllPersonsDepthOne","getAllPersonsDepthTwo","getAllPersonsDepthFour","getAllPersonsDepthFive"};
-        int runs = 10;
-        HashMap resultsStub = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsStub = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsStub.get(methodsToTest[i]);
             msd.getData();
-            assertThat(msd.getData().size(), equalTo(runs));
+            assertThat(msd.getData().size(), equalTo(twentyRandomNodes.length));
 
         }
         HashMap[] hm = {resultsStub};
@@ -256,8 +257,9 @@ class BenchmarkTest {
         Benchmark bm = new Benchmark(new DataAccessStub(), timeMock);
         when(timeMock.elapsedTime()).thenReturn(2.0);
         String[] methodsToTest = {"getAllPersonsDepthOne","getAllPersonsDepthTwo","getAllPersonsDepthFour","getAllPersonsDepthFive"};
-        int runs = 10;
-        HashMap resultsStub = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsStub = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsStub.get(methodsToTest[i]);
@@ -276,8 +278,9 @@ class BenchmarkTest {
         Benchmark bm = new Benchmark(new DataAccessStub(), timeMock);
         when(timeMock.elapsedTime()).thenReturn(2.0);
         String[] methodsToTest = {"getAllPersonsDepthOne","getAllPersonsDepthTwo","getAllPersonsDepthFour","getAllPersonsDepthFive"};
-        int runs = 10;
-        HashMap resultsStub = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsStub = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsStub.get(methodsToTest[i]);
@@ -289,8 +292,7 @@ class BenchmarkTest {
         bm.printHashMapsData(hm, methodsToTest);
 
     }
-
-
+}
 
 ```
 
@@ -316,23 +318,15 @@ The other classes are more of helpers and because of the unit test I can be conf
 public class BenchmarkIntegrationTest {
 
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
-
     @Test
     void getBenchmarkResultsNeo4JDataMeasurementsRealTime() {
         Stopwatch time = new Stopwatch();
 
         Benchmark bm = new Benchmark(new DataAccessNeo4J(new DBConnectorNeo4J()), time);
         String[] methodsToTest = {"getAllPersonsDepthOne"};
-        int runs = 10;
-        HashMap resultsNeo4J = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsNeo4J = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsNeo4J.get(methodsToTest[i]);
@@ -351,8 +345,9 @@ public class BenchmarkIntegrationTest {
 
         Benchmark bm = new Benchmark(new DataAccessPostGreSQL(new DBConnectorPostGres()), time);
         String[] methodsToTest = {"getAllPersonsDepthOne"};
-        int runs = 10;
-        HashMap resultsPotGres = bm.getBenchmarkResults(runs,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+
+        HashMap resultsPotGres = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
 
         for (int i = 0; i < methodsToTest.length; i++) {
             MeasurementData msd = (MeasurementData) resultsPotGres.get(methodsToTest[i]);

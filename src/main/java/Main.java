@@ -8,10 +8,10 @@ public class Main {
 
 
     public static void main(String[] args){
-        int neo = new DataAccessNeo4J(new DBConnectorNeo4J()).getAllPersonsDepthOne().size();
+        int neo = new DataAccessNeo4J(new DBConnectorNeo4J()).getAllPersonsDepthOne("Sol Linkert").size();
         int pos = 0;
         try {
-            pos = new DataAccessPostGreSQL(new DBConnectorPostGres()).getAllPersonsDepthOne().size();
+            pos = new DataAccessPostGreSQL(new DBConnectorPostGres()).getAllPersonsDepthOne("Sol Linkert").size();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -23,7 +23,8 @@ public class Main {
         //Stubbing
         Benchmark bm = new Benchmark(new DataAccessStub(), new Stopwatch());
         String[] methodsToTest = {"getAllPersonsDepthOne","getAllPersonsDepthTwo","getAllPersonsDepthFour","getAllPersonsDepthFive"};
-        HashMap resultsStub = bm.getBenchmarkResults(10,methodsToTest);
+        String[] twentyRandomNodes = {"Dino Kalt","Shirl Wilcock","Dulcie Miyares","Gianna Alan"};
+        HashMap resultsStub = bm.getBenchmarkResults(twentyRandomNodes,methodsToTest);
         HashMap[] hm = {resultsStub};
         bm.printHashMapsData(hm, methodsToTest);
     }
