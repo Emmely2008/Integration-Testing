@@ -1,22 +1,24 @@
 # Integration-Testing
-*By Emmely Lundber cph-el69*
+*By Emmely Lundberg cph-el69*
 
 
 
 
-### LITTLE BIT ABOUT THE PROJECT UNDER TEST
+### ABOUT THE PROJECT UNDER TEST
 This is a Java-project integrating with a Neo4J Graph database and a PostgresSQL database.
-I have written this program as part of the assignment from the Database course [Exercise - Technical Comparison of an SQL and Graph Database](https://github.com/datsoftlyngby/soft2018spring-databases-teaching-material/blob/master/assignments/Neo4J%20Exercise.ipynb).
-The purpose of the project is to perform benchmark test to compare queries in a Graph Database and a Relational database.
+This program is written as part of the assignment from the Database course [Exercise - Technical Comparison of an SQL and Graph Database](https://github.com/datsoftlyngby/soft2018spring-databases-teaching-material/blob/master/assignments/Neo4J%20Exercise.ipynb).
+The purpose of the program is to perform benchmark test to compare queries performance time in a Graph Database and a Relational database.
 
-I have also chosen this project because it is a project that it's not 100% complete/developed 
-yet which is not a problem with integration test where we can use stubs to replace.
+I have also chosen to do the integration tests on this project because it is a project that it's not 100% complete/developed 
+yet and this is a common scenario we face in integration test where we can use stubs to replace.
 
 The program was written in a Test Driven Development TDD approach.  
 The code is made testable  making use of design patterns such as Dependencies Injections and Polymorphism and stubs. 
 
+___________________
 
-LITTLE BIT ABOUT THREE DIFFERENT STRATEGIES IN INTEGRATION TESTING
+### ABOUT THE THREE DIFFERENT STRATEGIES IN INTEGRATION TESTING
+
 Integration Testing is the process of testing the interface between two software units or modules.
 It can be done on three ways:
 1) Big Bang Approach
@@ -53,13 +55,11 @@ Stubs comes into the picture when doing integration testing.
 While working on integration sometimes we face a situation where some of the functionality are still under the development. 
 
 
+________________
 
+### MY APPROACH TO INTEGRATION TESTING IN THIS PROJECT
 
-
-
-### MY APPROACH TO INTEGRATION TESTING
-
-#### Important Areas To Test
+#### What I Find Important Areas To Test
 
  - It's important to verify that the measured data is collected and presented correct.
  - Verifying that the result set from the same queries are the same for the respective database.

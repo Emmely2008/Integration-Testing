@@ -17,7 +17,7 @@ class DataAccessNeo4JTest {
         List<Person> list = da.getAllPersonsDepthOne();
         assertThat(list.size(), equalTo(8));
     }
-    @Test
+   /* @Test
     void getAllPersonsDepthTwo() {
     }
 
@@ -31,5 +31,5 @@ class DataAccessNeo4JTest {
 
     @Test
     void getAllPersonsDepthFive() {
-    }
+    }*/
 }

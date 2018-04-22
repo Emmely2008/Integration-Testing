@@ -19,11 +19,9 @@ import static junit.framework.TestCase.assertTrue;
 
 public class BenchmarkIntegrationTest {
 
-    private DBConnectorNeo4J dbconnector;
 
     @BeforeEach
     void setUp() {
-        this.dbconnector = new DBConnectorNeo4J();
     }
 
     @AfterEach

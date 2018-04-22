@@ -18,7 +18,7 @@ class DataAccessPostGreSQLTest {
 
     }
 
-    @Test
+    /*@Test
     void getAllPersonsDepthTwo() {
     }
 
@@ -32,5 +32,5 @@ class DataAccessPostGreSQLTest {
 
     @Test
     void getAllPersonsDepthFive() {
-    }
+    }*/
 }
