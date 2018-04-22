@@ -57,18 +57,18 @@ While working on integration sometimes we face a situation where some of the fun
 
 ________________
 
-### MY APPROACH TO INTEGRATION TESTING IN THIS PROJECT
+### MY APPROACH TO INTEGRATION TESTING
 
-#### What I Find Important Areas To Test
+#### What I Find Important Areas To Test In This Project
 
- - It's important to verify that the measured data is collected and presented correct.
- - Verifying that the result set from the same queries are the same for the respective database.
+ - It's important to verify that the measured data is collected and presented correctly.
+ - Verifying that the result set from the queries are the same for the respective database.
  
  
 
-I have chosen the Bottom Up Approach where I have implemented and unit tested from the bottom up.
+I have chosen the Bottom Up Approach where I have implemented and unit tested of all the components starting withe the ones at the under laying bottom.
 
-#### Bottom Up Approach - start with unit tests
+#### Bottom Up Approach - Start With Unit Tests
 
 My approach has been:
 - unit test all components at he bottom before integrating test
