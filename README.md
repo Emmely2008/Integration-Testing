@@ -87,9 +87,14 @@ I have developed the Program in the following way:
 
 ##### 1) Testing Queries in the respective database systems:
 
-Example:
+This is a manual test. I run the query directly with SQL to test the result I get. 
 
-In Java:
+Example PostGresSQL:
+
+[![https://gyazo.com/936d73fc12f58991aca745dbf6459ada](https://i.gyazo.com/936d73fc12f58991aca745dbf6459ada.png)](https://gyazo.com/936d73fc12f58991aca745dbf6459ada)
+
+Exaple Neo4J:
+[![https://gyazo.com/83d317c15044569c7d08cff963756751](https://i.gyazo.com/83d317c15044569c7d08cff963756751.png)](https://gyazo.com/83d317c15044569c7d08cff963756751)
 
 ##### 2) Development of and unit tested the data Layer
 
