@@ -5,9 +5,9 @@
 
 
 ### ABOUT THE PROJECT UNDER TEST
-This is a Java-project integrating with a Neo4J Graph database and a PostgresSQL database.
-This program is written as part of the assignment from the Database course [Exercise - Technical Comparison of an SQL and Graph Database](https://github.com/datsoftlyngby/soft2018spring-databases-teaching-material/blob/master/assignments/Neo4J%20Exercise.ipynb).
-The purpose of the program is to perform benchmark test to compare queries performance time in a Graph Database and a Relational database.
+This is a Java-project integrating with a Neo4J Graph Database and a PostgresSQL database.
+This program is written as part of the assignment from the Database course [Exercise - Technical Comparison of an SQL and Graph Database](https://github.com/datsoftlyngby/soft2018spring-databases-teaching-material/blob/master/assignments/Neo4J%20Exercise.ipynb) and used in this Test Exercise.
+The purpose of the program is to perform and display benchmark test to compare queries performance time in a Graph Database and a Relational database.
 
 I have also chosen to do the integration tests on this project because it is a project that it's not 100% complete/developed 
 yet and this is a common scenario we face in integration test where we can use stubs to replace.
