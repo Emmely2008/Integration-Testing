@@ -6,11 +6,11 @@
 
 ### ABOUT THE PROJECT UNDER TEST
 This is a Java-project integrating with a Neo4J Graph Database and a PostgresSQL database.
-This program is written as part of the assignment from the Database course [Exercise - Technical Comparison of an SQL and Graph Database](https://github.com/datsoftlyngby/soft2018spring-databases-teaching-material/blob/master/assignments/Neo4J%20Exercise.ipynb) and used in this Test Exercise.
-The purpose of the program is to perform and display benchmark test to compare queries performance time in a Graph Database and a Relational database.
+The program is written as part of the assignment from the Database Course [Exercise - Technical Comparison of an SQL and Graph Database](https://github.com/datsoftlyngby/soft2018spring-databases-teaching-material/blob/master/assignments/Neo4J%20Exercise.ipynb) and used in this Test Exercise.
+The purpose of the program is to perform and display benchmark test to compare queries performance time between a Graph Database and a Relational database.
 
 I have also chosen to do the integration tests on this project because it is a project that it's not 100% complete/developed 
-yet and this is a common scenario we face in integration test where we can use stubs to replace.
+yet and this is a common scenario we face in integration test where we can use stubs to replace pars that hasn't been implemented yet.
 
 The program was written in a Test Driven Development TDD approach.  
 The code is made testable  making use of design patterns such as Dependencies Injections and Polymorphism and stubs. 
@@ -87,7 +87,7 @@ In Java:
 - DataAccessor - interface
 - DataAccessNeo4J that *implements DataAccessor*
 - DBConnectorPostGres that *implements DataAccessor*
-- DataAccessStub that implements DataAccessor
+- DataAccessStub that *implements DataAccessor*
 
 - DBConnectorNeo4J - *used by DataAccessNeo4J*
 - DBConnectorPostGres - *used by DBConnectorPostGres*
