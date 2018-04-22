@@ -66,12 +66,21 @@ ________________
  
  
 
-I have chosen the Bottom Up Approach where I have implemented and unit tested of all the components starting withe the ones at the under laying bottom.
+I have chosen the Bottom Up Approach where I have implemented and unit tested of
+ all the components starting with the ones at the underlaying bottom. 
+ I have used stubs to make isolated unit tests of components that has external dependencies.
+ 
+*Lowest level modules are tested first and then high-level modules and finally 
+integrating the high-level modules to the low level to ensure the system is 
+working as intended.
+
+Stubs comes into the picture when doing integration testing.
+While working on integration sometimes we face a situation where some of the functionality are still under the development.*
 
 #### Bottom Up Approach - Start With Unit Tests
 
 My approach has been:
-- unit test all components at he bottom before integrating test
+- Unit test all components at he bottom before integrating test
 
 
 I have developed the Program in the following way:
@@ -84,7 +93,8 @@ In Java:
 
 ##### 2) Development of and unit tested the data Layer
 
-- DataAccessor - interface
+This layer consists of the following classes and interfaces:
+- DataAccessor - *interface*
 - DataAccessNeo4J that *implements DataAccessor*
 - DBConnectorPostGres that *implements DataAccessor*
 - DataAccessStub that *implements DataAccessor*
@@ -121,7 +131,7 @@ class DataAccessNeo4JTest {
     }
 	
 ```
-*We get the same number of items from the database*
+*The test are scares but I test that the respective databases returns the same number of items from the queries*
 
 
 ##### 3) Developed and unit tested helper Classes
@@ -202,8 +212,8 @@ class MeasurementDataTest {
 
 ##### 4) Developed and unit tested class Benchmark
 
-This is the class that I needed to use Stubs to be able to test the logic in isolation. 
-I found a bug a logic mistake that I made that was captured in the test.
+This is the class that I needed to use stubs to be able to test the logic in isolation. 
+I found a logic mistake that was captured in the test.
 
 
 
@@ -277,10 +287,24 @@ class BenchmarkTest {
 
 ```
 
-##### 5) Integration test the class Benchmark
+##### 5) Integration test with the Benchmark class
 
 In this test no stubs are used so we test the Benchmark class by injecting the real StopWatch and 
-the DataAccess that makes queries to the database.
+the DataAccess that makes queries to the database. 
+
+The test integrates the following classes:
+
+
+- Stopwatch
+- MeasurementData
+- DataAccessor: DataAccessNeo4J, DBConnectorPostGres.
+
+We know that each of the classes works because we have unit tested them in isolation.
+
+Even if Integration testing is about testing only two components at the time. I was little pragmatic and 
+by over looking that four components are used. I see this integration test mostly between the Benchmark class and the DataAccess.
+The other classes are more of helpers and because of the unit test I can be confident that they work as expected. 
+
 ```
 public class BenchmarkIntegrationTest {
 
