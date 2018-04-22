@@ -72,9 +72,9 @@ I have chosen the Bottom Up Approach where I have implemented and unit tested of
  
 *Lowest level modules are tested first and then high-level modules and finally 
 integrating the high-level modules to the low level to ensure the system is 
-working as intended.
+working as intended.*
 
-Stubs comes into the picture when doing integration testing.
+*Stubs comes into the picture when doing integration testing.
 While working on integration sometimes we face a situation where some of the functionality are still under the development.*
 
 #### Bottom Up Approach - Start With Unit Tests
@@ -362,7 +362,7 @@ public class BenchmarkIntegrationTest {
 
 }
 ```
-
+________________
 
 
 ### TEST RESULTS
