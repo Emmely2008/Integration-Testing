@@ -15,6 +15,8 @@ yet and this is a common scenario we face in integration test where we can use s
 The program was written in a Test Driven Development TDD approach.  
 The code is made testable  making use of design patterns such as Dependencies Injections and Polymorphism and stubs. 
 
+The program is still under development so this program should be seen as a snapshot of a program under development that uses DDT, unit tests and integrations tests.
+
 ___________________
 
 ### ABOUT THE THREE DIFFERENT STRATEGIES IN INTEGRATION TESTING
